@@ -8,16 +8,15 @@ const courses = [
   { id: 5, title: "Data Structures" },
   ];
 
-function Courses
-({ enrollCourse, EnrolledCourses }) {
+function Courses({ enrollCourse, enrolledCourses }) {
   return (
     <div>
     <h2>Available Courses</h2>
-  {courses.map(course => 9
+  {courses.map(course => (
                <CourseCard
                key={course.id}
-   course={course}
-   enrollCourse={enrollCourse}
+               course={course}
+               enrollCourse={enrollCourse}
 
   isEnrolled={enrolledCoures.some(c => c.id === course.id)}
   />
