@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Courses from ".?pages/Courses";
+import Courses from "./pages/Courses";
 import EnrolledCourses from "./pages/EnrolledCourses";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   const enrollCourse= (course) => {
     if (!enrolledCourses.find(c => c.id === course.id)) {
 
-      setEnrolledCourses([...enrolledCourses,curse});
+      setEnrolledCourses([...enrolledCourses,course]);
     }
   };
 
@@ -29,12 +29,24 @@ function App() {
       <Route
 path="/courses"
 element={
-  <enrolledCourses={enrolledCourses}
+  <Courses
+  
+  enrolledCourses={enrolledCourses}
 
-removeCourse={removeCourse} 
-          />
-  }
+enrollCourse={enrollCourse}
 />
+  }
+  />
+  <Route path="/enrolled"
+  element={
+    <EnrolledCourses
+
+    enrolledCourses={enrolledCourses}
+
+      removeCourse=[removeCourse}
+                    />
+                    }
+                    />
   </Routes>
   </>
 );
